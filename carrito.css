@@ -1,0 +1,57 @@
+/* Contenedor principal de la sección de compras */
+#seccion-carrito {
+    padding: 25px;
+    background-color: #fdfbf7; /* Crema suave */
+    border: 2px solid #e6dfd5;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+#seccion-carrito h2 {
+    color: #5c3a21; /* Marrón chocolate */
+    text-align: center;
+    border-bottom: 2px solid #8c532b;
+    padding-bottom: 10px;
+}
+
+/* Lista de productos seleccionados */
+#lista-carrito {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed #c4b5a5;
+    color: #38302a;
+}
+
+/* Sección de total y cobro */
+.total-carrito {
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: right;
+    margin-top: 20px;
+    color: #8c532b;
+}
+
+#btn-finalizar-compra {
+    width: 100%;
+    padding: 15px;
+    background-color: #5c3a21;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#btn-finalizar-compra:hover {
+    background-color: #3d2514;
+}
