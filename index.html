@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Masa Madre - Panadería Argentina</title>
-    <!-- Vinculación de la hoja de estilos externa -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- BARRA DE NAVEGACIÓN (NAVBAR) -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">La Masa Madre</a>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
+                <li><a href="#oferta">Ofertas</a></li>
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="#acerca">Acerca nuestro</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -22,7 +21,6 @@
         </div>
     </nav>
 
-    <!-- SECCIÓN DE ENCABEZADO (HERO) -->
     <header>
         <div class="header-content">
             <h1>Tradición y Sabor</h1>
@@ -30,13 +28,29 @@
         </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL: CATÁLOGO DE PRODUCTOS -->
+    <section class="container" id="oferta">
+        <div class="promo-banner">
+            <div class="promo-image">
+                <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Docena de Facturas Surtidas">
+            </div>
+            <div class="promo-content">
+                <span class="promo-badge">¡Oferta del Día!</span>
+                <h2>Docena de Facturas Surtidas</h2>
+                <p>La mejor selección para tu mate. Incluye medialunas de manteca, de grasa, vigilantes y sacramentos. ¡Horneadas esta misma mañana!</p>
+                <div class="promo-price">
+                    <span class="old-price">$4.800</span>
+                    <span class="new-price">$3.900</span>
+                </div>
+                <a href="#" class="btn promo-btn">Aprovechar Oferta</a>
+            </div>
+        </div>
+    </section>
+
     <main class="container" id="productos">
         <h2 class="section-title">Especialidades de la Casa</h2>
         
         <div class="products-grid">
             
-            <!-- PRODUCTO 1: MEDIALUNAS -->
             <article class="product-card">
                 <div class="card-image">
                     <span class="badge">Más vendidas</span>
@@ -52,7 +66,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCTO 2: PAN DE CAMPO -->
             <article class="product-card">
                 <div class="card-image">
                     <span class="badge">Recién salido</span>
@@ -68,7 +81,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCTO 3: BIZCOCHITOS DE GRASA -->
             <article class="product-card">
                 <div class="card-image">
                     <span class="badge">Para el mate</span>
@@ -84,7 +96,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCTO 4: ALFAJORES DE MAICENA -->
             <article class="product-card">
                 <div class="card-image">
                     <span class="badge">Pura Dulzura</span>
@@ -100,7 +111,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCTO 5: PASTA FROLA -->
             <article class="product-card">
                 <div class="card-image">
                     <span class="badge">Tradicional</span>
@@ -119,7 +129,6 @@
         </div>
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer id="contacto">
         <p>&copy; 2026 La Masa Madre - Panadería Argentina. Todos los derechos reservados.</p>
         <p style="margin-top: 10px; font-size: 0.85rem; color: var(--dorado-trigo);">Visitanos en nuestro local o contactanos por redes sociales.</p>
