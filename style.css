@@ -28,6 +28,56 @@ body {
 }
 
 /* ==========================================================================
+   BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
+.navbar {
+    background-color: var(--marron-horno);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: var(--amarillo-suave);
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: var(--crema-vainilla);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--terracota);
+}
+
+/* ==========================================================================
    ENCABEZADO (HEADER / HERO)
    ========================================================================== */
 header {
@@ -86,7 +136,6 @@ header p {
     border-radius: 2px;
 }
 
-/* Grilla responsiva de productos */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -104,7 +153,7 @@ header p {
     box-shadow: 0 10px 25px rgba(78, 44, 21, 0.06);
     border: 1px solid rgba(197, 160, 89, 0.2);
     display: flex;
-    flex-direction: column; /* Permite que el botón se alinee abajo si el contenido varía */
+    flex-direction: column;
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
                 box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -114,7 +163,6 @@ header p {
     box-shadow: 0 15px 35px rgba(78, 44, 21, 0.12);
 }
 
-/* Imagen del Producto */
 .card-image {
     width: 100%;
     height: 240px;
@@ -134,7 +182,6 @@ header p {
     transform: scale(1.05);
 }
 
-/* Insignias (Badges) */
 .badge {
     position: absolute;
     top: 15px;
@@ -149,13 +196,12 @@ header p {
     z-index: 2;
 }
 
-/* Bloque de Información */
 .card-content {
     padding: 25px;
     border-bottom: 5px solid var(--dorado-trigo);
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Hace que todas las tarjetas tengan el mismo alto visual */
+    flex-grow: 1;
 }
 
 .card-content h3 {
@@ -169,10 +215,9 @@ header p {
     font-size: 0.95rem;
     color: var(--texto-mutado);
     margin-bottom: 20px;
-    flex-grow: 1; /* Empuja el precio y botón al fondo de la tarjeta */
+    flex-grow: 1;
 }
 
-/* Precios */
 .price-row {
     margin-bottom: 18px;
 }
@@ -190,7 +235,6 @@ header p {
     margin-left: 4px;
 }
 
-/* Botón Call to Action */
 .btn {
     display: block;
     width: 100%;
