@@ -66,3 +66,29 @@ function renderizarCarrito() {
 
 // Aseguramos que el carrito se renderice si el usuario entra con productos guardados
 document.addEventListener('DOMContentLoaded', renderizarCarrito);
+
+// Función para eliminar un producto específico del carrito
+function eliminarDelCarrito(productoId) {
+    // Filtramos el arreglo dejando todos MENOS el que queremos borrar
+    carrito = carrito.filter(item => item.id !== productoId);
+    
+    // Actualizamos la memoria y volvemos a dibujar
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    renderizarCarrito();
+}
+
+// Lógica del botón Finalizar Compra
+document.getElementById('btn-finalizar-compra')?.addEventListener('click', () => {
+    if (carrito.length === 0) {
+        alert("El carrito está vacío. ¡Agregá algunas facturas primero!");
+        return; // Cortamos la ejecución acá
+    }
+
+    // Simulamos el éxito de la compra
+    alert("¡Pedido confirmado! En breve prepararemos tu orden.");
+    
+    // Vaciamos la memoria y actualizamos la pantalla
+    carrito = [];
+    localStorage.removeItem('carrito');
+    renderizarCarrito();
+});
