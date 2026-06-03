@@ -270,6 +270,8 @@ describe('Sistema de carrito', () => {
       );
     });
 
+    //Posible bug, importante. 
+
     test('permite agregar productos con precio negativo (bug actual)', () => {
       agregarAlCarrito(1, 'Producto raro', -500);
 
