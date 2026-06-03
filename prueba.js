@@ -34,4 +34,78 @@ describe('Sistema de carrito', () => {
   });
 
 
+  // =========================
+  // renderizarCarrito
+  // =========================
+
+  describe('renderizarCarrito', () => {
+
+    test('debe renderizar productos en el DOM', () => {
+      carrito = [
+        {
+          id: 1,
+          nombre: 'Factura',
+          precio: 100,
+          cantidad: 2
+        }
+      ];
+
+      renderizarCarrito();
+
+      const items = document.querySelectorAll('.item-carrito');
+
+      expect(items.length).toBe(1);
+
+      expect(items[0].textContent).toContain('Factura');
+
+      expect(items[0].textContent).toContain('2x');
+    });
+
+    test('debe calcular correctamente el total', () => {
+      carrito = [
+        {
+          id: 1,
+          nombre: 'Factura',
+          precio: 100,
+          cantidad: 2
+        },
+        {
+          id: 2,
+          nombre: 'Medialuna',
+          precio: 50,
+          cantidad: 1
+        }
+      ];
+
+      renderizarCarrito();
+
+      const total = document.getElementById('total-precio');
+
+      expect(total.textContent).toBe('250');
+    });
+
+    test('no debe romper si no existe lista-carrito', () => {
+      document.body.innerHTML = `
+                <span id="total-precio"></span>
+            `;
+
+      expect(() => {
+        renderizarCarrito();
+      }).not.toThrow();
+    });
+
+    test('debe limpiar contenido previo antes de renderizar', () => {
+      const lista = document.getElementById('lista-carrito');
+
+      lista.innerHTML = '<li>Viejo</li>';
+
+      carrito = [];
+
+      renderizarCarrito();
+
+      expect(lista.innerHTML).toBe('');
+    });
+  });
+
+
 });
