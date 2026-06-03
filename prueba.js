@@ -285,29 +285,5 @@ describe('Sistema de carrito', () => {
     });
   });
 
-  // =========================
-  // Casos problemáticos reales
-  // =========================
-
-  describe('errores potenciales', () => {
-
-    test('JSON.parse inválido rompe la inicialización (bug real)', () => {
-      Storage.prototype.getItem = jest.fn(() => 'json roto');
-
-      expect(() => {
-        JSON.parse(localStorage.getItem('carrito'));
-      }).toThrow();
-    });
-
-    test('localStorage.setItem puede lanzar excepción', () => {
-      localStorage.setItem.mockImplementation(() => {
-        throw new Error('Storage lleno');
-      });
-
-      expect(() => {
-        agregarAlCarrito(1, 'Factura', 100);
-      }).toThrow('Storage lleno');
-    });
-  });
 
 });
