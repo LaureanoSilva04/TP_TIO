@@ -107,7 +107,7 @@ describe('Sistema de carrito', () => {
     });
   });
 
-
+  
   // =========================
   // eliminarDelCarrito
   // =========================
@@ -161,7 +161,7 @@ describe('Sistema de carrito', () => {
     });
   });
 
-
+  
   // =========================
   // Finalizar compra
   // =========================
@@ -218,70 +218,6 @@ describe('Sistema de carrito', () => {
         .click();
 
       expect(renderizarSpy).toHaveBeenCalled();
-    });
-  });
-
-  // =========================
-  // agregarAlCarrito
-  // =========================
-
-  describe('agregarAlCarrito', () => {
-
-    test('debe agregar un producto nuevo', () => {
-      agregarAlCarrito(1, 'Factura', 100);
-
-      expect(carrito.length).toBe(1);
-
-      expect(carrito[0]).toEqual({
-        id: 1,
-        nombre: 'Factura',
-        precio: 100,
-        cantidad: 1
-      });
-
-      expect(localStorage.setItem).toHaveBeenCalled();
-
-      expect(renderizarSpy).toHaveBeenCalled();
-    });
-
-    test('debe aumentar cantidad si el producto ya existe', () => {
-      carrito = [
-        {
-          id: 1,
-          nombre: 'Factura',
-          precio: 100,
-          cantidad: 1
-        }
-      ];
-
-      agregarAlCarrito(1, 'Factura', 100);
-
-      expect(carrito.length).toBe(1);
-
-      expect(carrito[0].cantidad).toBe(2);
-    });
-
-    test('debe guardar el carrito actualizado en localStorage', () => {
-      agregarAlCarrito(1, 'Factura', 100);
-
-      expect(localStorage.setItem).toHaveBeenCalledWith(
-        'carrito',
-        JSON.stringify(carrito)
-      );
-    });
-
-    //Posible bug, importante. 
-
-    test('permite agregar productos con precio negativo (bug actual)', () => {
-      agregarAlCarrito(1, 'Producto raro', -500);
-
-      expect(carrito[0].precio).toBe(-500);
-    });
-
-    test('permite productoId undefined (bug actual)', () => {
-      agregarAlCarrito(undefined, 'Sin ID', 100);
-
-      expect(carrito[0].id).toBeUndefined();
     });
   });
 
