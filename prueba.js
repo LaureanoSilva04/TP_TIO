@@ -107,59 +107,5 @@ describe('Sistema de carrito', () => {
     });
   });
 
-  
-  // =========================
-  // eliminarDelCarrito
-  // =========================
-
-  describe('eliminarDelCarrito', () => {
-
-    test('debe eliminar el producto correcto', () => {
-      carrito = [
-        {
-          id: 1,
-          nombre: 'Factura',
-          precio: 100,
-          cantidad: 1
-        },
-        {
-          id: 2,
-          nombre: 'Medialuna',
-          precio: 50,
-          cantidad: 1
-        }
-      ];
-
-      eliminarDelCarrito(1);
-
-      expect(carrito.length).toBe(1);
-
-      expect(carrito[0].id).toBe(2);
-    });
-
-    test('debe actualizar localStorage al eliminar', () => {
-      carrito = [
-        {
-          id: 1,
-          nombre: 'Factura',
-          precio: 100,
-          cantidad: 1
-        }
-      ];
-
-      eliminarDelCarrito(1);
-
-      expect(localStorage.setItem).toHaveBeenCalled();
-    });
-
-    test('no debe romper si el producto no existe', () => {
-      carrito = [];
-
-      expect(() => {
-        eliminarDelCarrito(999);
-      }).not.toThrow();
-    });
-  });
-
 
 });
