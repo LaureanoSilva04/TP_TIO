@@ -22,14 +22,6 @@
     margin: 20px 0;
 }
 
-.item-carrito {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px dashed #c4b5a5;
-    color: #38302a;
-}
-
 /* Sección de total y cobro */
 .total-carrito {
     font-weight: bold;
