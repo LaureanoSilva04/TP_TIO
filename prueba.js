@@ -161,5 +161,65 @@ describe('Sistema de carrito', () => {
     });
   });
 
+  
+  // =========================
+  // Finalizar compra
+  // =========================
+
+  describe('finalizar compra', () => {
+
+    test('debe mostrar alerta si el carrito está vacío', () => {
+      carrito = [];
+
+      document
+        .getElementById('btn-finalizar-compra')
+        .click();
+
+      expect(alert).toHaveBeenCalledWith(
+        "El carrito está vacío. ¡Agregá algunas facturas primero!"
+      );
+    });
+
+    test('debe confirmar compra y vaciar carrito', () => {
+      carrito = [
+        {
+          id: 1,
+          nombre: 'Factura',
+          precio: 100,
+          cantidad: 1
+        }
+      ];
+
+      document
+        .getElementById('btn-finalizar-compra')
+        .click();
+
+      expect(alert).toHaveBeenCalledWith(
+        "¡Pedido confirmado! En breve prepararemos tu orden."
+      );
+
+      expect(carrito.length).toBe(0);
+
+      expect(localStorage.removeItem).toHaveBeenCalledWith('carrito');
+    });
+
+    test('debe renderizar nuevamente luego de finalizar compra', () => {
+      carrito = [
+        {
+          id: 1,
+          nombre: 'Factura',
+          precio: 100,
+          cantidad: 1
+        }
+      ];
+
+      document
+        .getElementById('btn-finalizar-compra')
+        .click();
+
+      expect(renderizarSpy).toHaveBeenCalled();
+    });
+  });
+
 
 });
