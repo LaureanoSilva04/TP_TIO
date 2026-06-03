@@ -1,3 +1,4 @@
+//comentario de prueba
 // Inicialización de la memoria del carrito
 // Intentamos recuperar datos del localStorage; si no hay, creamos un arreglo vacío.
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
