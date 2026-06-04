@@ -1,3 +1,7 @@
+//Se van a realizar las pruebas de funcionalidad del frontend y del backend.
+
+//pretendo que rompa al pushear
+
 /**
  * carrito.test.js
  * Tests para carrito.js usando Jest + jsdom
