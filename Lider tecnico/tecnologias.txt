@@ -8,6 +8,7 @@ Para mejorar la escalabilidad, el rendimiento y la experiencia de usuario de la 
 
 2. Backend, Base de Datos y Persistencia:
    - Docker: Para contenedorizar el entorno de desarrollo local (servidor y base de datos relacional). Esto garantizará que todo el equipo trabaje exactamente bajo la misma configuración, evitando el clásico "en mi máquina funciona".
+   - PostgreSQL: Como motor de base de datos relacional principal, para aprovechar su robustez en el manejo de transacciones complejas y soporte nativo para datos tipo JSON (ideal para el detalle de los pedidos).
    - Redis: Para implementar una capa de caché en memoria que almacene el catálogo de productos más consultados, reduciendo las consultas repetitivas a la base de datos principal.
 
 3. Servicios de Terceros e Infraestructura:
